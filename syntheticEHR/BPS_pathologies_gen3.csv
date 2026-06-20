@@ -1,0 +1,82 @@
+CODE_BPS,PATOLOGIA_BPS,BPS_PATHOLOGY
+0101,VIH,HIV
+0201,Cáncer de cabeza y cuello,Head and neck cancer
+0202,Cáncer de estómago,Stomach cancer
+0203,Cáncer colorrectal,Colorectal cancer
+0204,Cáncer de hígado y vías biliares,Liver and Bile Duct Cancer
+0205,Cáncer de páncreas,Pancreatic cancer
+0206,Cáncer de bronquio y pulmón,Lung and Bronchus Cancer
+0207,Cáncer de tiroides,Thyroid cancer
+0208,Cáncer de hueso y tejidos blandos,Bone and soft tissue sarcomas
+0209,Melanoma de piel,Melanoma
+0210,Cáncer de mama,Breast cancer
+0211,Cáncer de útero,Uterine cancer
+0212,Cáncer de cuello uterino,Cervical cancer
+0213,Cáncer de ovario,Ovarian cancer
+0214,Cáncer de próstata,Prostate cancer
+0215,Cáncer de testículo,Testicular cancer
+0216,Cáncer de riñón y pelvis renal,Kidney and renal pelvis cancer
+0217,Cáncer de vejiga,Bladder cancer
+0218,Enfermedad de Hodgkin,Hodgkin’s disease
+0219,Linfoma no Hodgkin,Non-Hodgkin's lymphoma
+0220,Leucemia,Leukemia
+0221,Cáncer inmunoproliferativo,Immunoproliferative neoplasm
+0222,Sarcoma de Kaposi,Kaposi's sarcoma
+0401,Diabetes,Diabetes
+0402,Dislipemia,Hyperlipidaemia
+0403,Hipotiroidismo,Hypothyroidism
+0404,Obesidad,Obesity
+0500,Demencia,Dementia
+0501,Otro trastorno mental orgánico,Other organic mental disorder
+0502,Dependencia alcohol,Alcohol dependence
+0503,Dependencia tabaco,Tobacco dependence
+0504,Dependencia otras sustancias,Other substance dependece
+0505,Trastorno esquizofrénico,Schizophrenia
+0506,Trastorno estado animo,Mood disorder
+0507,Trastorno de ansiedad,Anxiety disorder
+0508,Trastorno conducta alimentaria,Eating disorder
+0509,Otro trastorno funcional,Other functional disorder
+0510,Trastorno personalidad y comportamiento adulto,Disorders of adult personality and behaviour
+0511,Discapacidad intelectual,Intellectual disability
+0512,Trastorno del espectro autista,Autism
+0513,Otro trastorno del desarrollo,Other developmental disorder
+0514,Trastorno inicio infancia adolescencia,Behavioural and emotional disorders with onset usually occurring in childhood and adolescence
+0601,Epilepsia,Epilepsy
+0602,Enfermedad de Parkinson,Parkinson disease
+0603,Síndrome extrapiramidal,Extrapyramidal disorder
+0604,Enfermedad neurológica con déficit motor no ACV,Motor disorders with no CVA
+0701,Degeneración macular asociada a la edad,Age-related macular degeneration
+0702,Glaucoma,Glaucoma
+0703,Retinopatía,Retinopathy
+0902,Enfermedad cerebrovascular mal definida y otra,Ill-defined cerebrovascular disease and others
+0904,Oclusión o estenosis arterias precerebrales,Occlusion or stenosis of precerebral arteries
+0905,Secuela enfermedad cerebrovascular,Sequelae of cerebrovascular diseases
+0906,Arteriopatía de extremidades,Extremity arteriopathy diseases
+0907,Arteriopatía intraabdominal,Intra-abdominal artery disease
+0908,Aneurisma arterias aorta periféricas y viscerales,Peripheral and visceral artery aneurysms
+0909,Fibrilación auricular,Atrial fibrillation
+0910,Cardiopatía isquémica,Ischemic heart disease
+0911,Enfermedad valvular adquirida,Acquired heart diseases
+0912,Anomalía congénita cardíaca y circulatoria,Congenital cardiovascular anomalies
+0913,Hipertensión,Hypertension
+0914,Insuficiencia cardiaca,Heart failure
+1001,EPOC,COPD
+1002,Asma,Asthma
+1101,Hepatopatía crónica excepto cirrosis,Ischemic hepatitis except for cirrhosis
+1102,Esteatosis hepática,Hepatic steatosis
+1103,Cirrosis hepática,Hepatic cirrhosis
+1104,Enfermedad por reflujo gastroesofágico,Gastroesophageal reflux disease
+1105,Enteritis regional y colitis ulcerosa,Regional enteritis and ulcerative colitis
+1106,Síndrome de malabsorción e intolerancia alimenticia,Malabsorption and food intolerance
+1201,Psoriasis,Psoriasis
+1202,Dermatitis atópica,Dermatitis
+1301,Osteoporosis,Osteoporosis
+1302,Artrosis/espondilosis,Arthrosis/spondylosis
+1303,Gota y otras artropatías por cristales,Gout and other crystal deposition diseases
+1304,Otra artropatía,Other arthropathies
+1305,Artritis reumatoide y enfermedades relacionadas,Rheumatoid arthritis and related diseases
+1306,Enfermedad del colágeno y vasculitis,Collagen diseases and vasculitis
+1307,Fibromialgia,Fibromyalgia
+1401,Insuficiencia renal crónica,Chronic kidney disease
+1402,Litiasis urinaria,Urinary lithiasis
+1999,Amputacion,Amputation
