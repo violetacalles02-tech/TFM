@@ -4,3 +4,7 @@ challenge/syntheticEHR/miic_graph/input/matriz_comorbilidad_filtrada.csv
 challenge/syntheticEHR/miic_graph/input/matriz_comorbilidad_clean.csv
 challenge/syntheticEHR/miic_graph/input/variables_eliminadas.csv
 challenge/syntheticEHR/miic_graph/output/miic_grafo.graphml
+challenge/syntheticEHR/matrix_disorder/matriz_supervivencia_corazon.csv
+challenge/syntheticEHR/matrix_disorder/matriz_supervivencia_rinon.csv
+challenge/syntheticEHR/matrix_disorder/matriz_supervivencia_retina.csv
+challenge/syntheticEHR/matriz_comorbilidad_clean.csv
