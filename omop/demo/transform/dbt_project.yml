@@ -1,0 +1,20 @@
+name: 'omop_demo'
+version: '1.0.0'
+config-version: 2
+
+profile: 'postgres'
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  omop_demo:
+    +materialized: view

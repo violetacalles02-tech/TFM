@@ -1,10 +1,19 @@
-challenge/syntheticEHR/data/daae_generated_diabetes_patients_camda_gen3_preprocessed.json
-challenge/syntheticEHR/data/daae_generated_diabetes_patients_camda_gen3.json
-challenge/syntheticEHR/miic_graph/input/matriz_comorbilidad_filtrada.csv
-challenge/syntheticEHR/miic_graph/input/matriz_comorbilidad_clean.csv
-challenge/syntheticEHR/miic_graph/input/variables_eliminadas.csv
-challenge/syntheticEHR/miic_graph/output/miic_grafo.graphml
-challenge/syntheticEHR/matrix_disorder/matriz_supervivencia_corazon.csv
-challenge/syntheticEHR/matrix_disorder/matriz_supervivencia_rinon.csv
-challenge/syntheticEHR/matrix_disorder/matriz_supervivencia_retina.csv
+# --- Datos y outputs pesados del TFM (challenge/syntheticEHR) ---
+challenge/syntheticEHR/data/*.json
+challenge/syntheticEHR/miic_graph/input/*.csv
+challenge/syntheticEHR/miic_graph/output/*.graphml
+challenge/syntheticEHR/matrix_disorder/*.csv
 challenge/syntheticEHR/matriz_comorbilidad_clean.csv
+
+# --- OMOP: ignorar todo salvo la carpeta demo ---
+omop/*
+!omop/demo
+
+# --- Datasets comprimidos sueltos ---
+*.zip
+
+# --- Basura habitual de Python / Jupyter / conda ---
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/

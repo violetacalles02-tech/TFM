@@ -1,0 +1,36 @@
+version: 1
+default_environment: test
+send_anonymous_usage_stats: false
+project_id: 019fdbad-bc5b-7022-a538-6fdf48677624
+plugins:
+  extractors:
+  - name: tap-csv
+    variant: meltano
+    pip_url: git+https://gitlab.com/meltano/tap-csv.git
+    config:
+      files:
+      - entity: patients
+        file: ../pycones-23-modern-data-stack/synthea/csv/patients.csv
+        keys:
+        - Id
+  loaders:
+  - name: target-postgres
+    variant: meltanolabs
+    pip_url: meltanolabs-target-postgres
+    config:
+      host: localhost
+      port: 5433
+      user: postgres
+      database: demo
+      default_target_schema: raw
+  utilities:
+  - name: dbt-postgres
+    variant: dbt-labs
+    pip_url: dbt-core dbt-postgres meltano-dbt-ext~=0.5.0
+    config:
+      user: postgres
+      schema: cdm
+      dbname: demo
+      port: 5433
+environments:
+- name: test
