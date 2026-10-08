@@ -4,6 +4,7 @@ challenge/syntheticEHR/miic_graph/input/*.csv
 challenge/syntheticEHR/miic_graph/output/*.graphml
 challenge/syntheticEHR/matrix_disorder/*.csv
 challenge/syntheticEHR/matriz_comorbilidad_clean.csv
+*.csv
 
 # --- OMOP: ignorar todo salvo la carpeta demo ---
 omop/*
