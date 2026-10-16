@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: person
+    columns:
+      - name: person_id
+        tests:
+          - unique
+          - not_null
+          

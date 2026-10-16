@@ -1,0 +1,15 @@
+config:
+  send_anonymous_usage_stats: false
+
+postgres:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      port: 5433
+      user: postgres
+      password: "{{ env_var('DBT_PASSWORD') }}"
+      dbname: demo
+      schema: analytics
+      threads: 4
