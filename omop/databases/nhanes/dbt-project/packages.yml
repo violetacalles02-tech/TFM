@@ -1,0 +1,5 @@
+packages:
+  - package: dbt-labs/logging
+    version: 0.8.0
+  - package: metaplane/dbt_expectations
+    version: 0.10.10   

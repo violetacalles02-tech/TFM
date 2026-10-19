@@ -1,0 +1,5 @@
+dbt-postgres
+psycopg2-binary
+PyYAML
+zipfile
+click

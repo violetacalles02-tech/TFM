@@ -1,0 +1,110 @@
+
+# Name your package! Package names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: nhanes_db
+version: '1.0'
+config-version: 2
+
+# This setting configures which "profile" dbt uses for this project. Profiles contain
+# database connection information, and should be configured in the  ~/.dbt/profiles.yml file
+profile: nhanes_db
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that source models can be found
+# in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+# log-path: "/tmp/logs"
+# The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+# longer be supported in a future version of dbt-core. If you wish to write dbt
+# logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+# env var instead.
+# target-path: "/tmp/target" 
+# Directory which will store compiled SQL files
+# The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+# longer be supported in a future version of dbt-core. If you wish to write dbt
+# artifacts to a custom directory, please use the --target-path CLI flag or DBT_TARGET_PATH env var instead.
+
+clean-targets:         # directories to be removed by `dbt clean`
+    - "target"
+    - "dbt_packages"
+
+# You can define configurations for models in the `source-paths` directory here.
+# Using these configurations, you can enable or disable models, change how they
+# are materialized, and more!
+
+# In this example config, we tell dbt to build all models in the example/ directory
+# as views (the default). These settings can be overridden in the individual model files
+# using the `{ config(...) }` macro.
+
+##
+##
+##
+
+models:
+  nhanes_db:
+    # Applies to all files under models/staging/
+    staging:
+      schema: "{{ env_var('OMOP_STAGING_SCHEMA') }}"
+      post-hook:
+        - "{{ logging.log_model_end_event() }}"
+    mappings:
+      schema: "{{ env_var('OMOP_STAGING_SCHEMA') }}"
+      post-hook:
+        - "{{ logging.log_model_end_event() }}"
+    cdm:
+      schema: "{{ env_var('OMOP_CDM_SCHEMA') }}"
+      +tags: [cdm]
+      post-hook:
+        - "{{ logging.log_model_end_event() }}"
+    derived:
+      schema: "{{ env_var('OMOP_CDM_SCHEMA') }}"
+      enabled: true
+      +tags: [cdm]
+      post-hook:
+        - "{{ logging.log_model_end_event() }}"
+    achilles:
+      +enabled: true
+      +schema: "{{ env_var('OMOP_DQ_RESULTS_SCHEMA') }}"
+      +tags: [dq]
+      post-hook:
+        - "{{ logging.log_model_end_event() }}"
+    dqd:
+      +enabled: true
+      +schema: "{{ env_var('OMOP_DQ_RESULTS_SCHEMA') }}"
+      +tags: [dq]
+      post-hook:
+        - "{{ logging.log_model_end_event() }}"
+  +pre-hook:
+    - sql: "{{ logging.log_model_start_event() }}"
+      transaction: False
+  +post-hook:
+   - "{{ logging.log_model_end_event() }}"
+
+# Define seeds here
+seeds:
+  nhanes_db:
+      achilles:
+        +schema: "{{ env_var('OMOP_DQ_RESULTS_SCHEMA') }}"
+        +tags: [dq]
+      mappings:
+        +schema: "{{ env_var('OMOP_STAGING_SCHEMA') }}"
+  +pre-hook:
+    - sql: "{{ logging.log_model_end_event() }}"
+      transaction: False
+  +post-hook:
+   - "{{ logging.log_model_end_event() }}"
+
+on-run-end:
+  - "{{ create_cdm_indexes() if target.type == 'postgres' and (results | selectattr('node.name', 'equalto', 'cdm') | list | length > 0) }}"
+  - "{{ clean_temp_quality_models() if (results | selectattr('node.name', 'in', ['achilles_results', 'achilles_results_dist', 'dqdashboard_results']) | list | length > 0) }}"
+
+flags:
+  send_anonymous_usage_stats: false
+
+vars:
+  survey_concept_id: 32883

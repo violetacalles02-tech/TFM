@@ -1,0 +1,108 @@
+version: 2
+
+sources:
+  - name: raw # tables copied from source DB
+    schema: "{{ env_var('OMOP_BASE_SCHEMA') }}"
+    tables:
+      - name: demo_l
+      - name: alq_l
+      - name: paq_l
+      - name: huq_l
+      - name: lux_l
+      - name: bmx_l
+      - name: bpxo_l
+      - name: bax_l
+      - name: alb_cr_l
+      - name: vocwb_l
+      - name: biopro_l
+      - name: tst_l
+      - name: vid_l
+      - name: hepbd_l
+      - name: pbcd_l
+      - name: hepc_l
+      - name: hepb_s_l
+      - name: far_l
+      - name: hepe_l
+      - name: ihgem_l
+      - name: hscrp_l
+      - name: hdl_l
+      - name: hepa_l
+      - name: ffmr_l
+      - name: trigly_l
+      - name: tchol_l
+      - name: folfms_l
+      - name: cbc_l
+      - name: glu_l
+      - name: folate_l
+      - name: ins_l
+      - name: tfr_l
+      - name: agp_l
+      - name: fertin_l
+      - name: ghb_l
+      - name: smq_l
+      - name: rhq_l
+      - name: mcq_l
+      - name: bpq_l
+      - name: diq_l
+
+
+  - name: base
+    schema: base
+    tables:
+      - name: agp_l
+      - name: alb_cr_l
+      - name: alq_l
+      - name: bax_l
+      - name: biopro_l
+      - name: bmx_l
+      - name: bpq_l
+      - name: bpxo_l
+      - name: cbc_l
+      - name: demo_l
+      - name: diq_l
+      - name: far_l
+      - name: fertin_l
+      - name: ffmr_l
+      - name: folate_l
+      - name: folfms_l
+      - name: ghb_l
+      - name: glu_l
+      - name: hdl_l
+      - name: hepa_l
+      - name: hepb_s_l
+      - name: hepbd_l
+      - name: hepc_l
+      - name: hepe_l
+      - name: hscrp_l
+      - name: huq_l
+      - name: ihgem_l
+      - name: ins_l
+      - name: lux_l
+      - name: mcq_l
+      - name: paq_l
+      - name: pbcd_l
+      - name: rhq_l
+      - name: smq_l
+      - name: tchol_l
+      - name: tfr_l
+      - name: trigly_l
+      - name: tst_l
+      - name: vid_l
+      - name: vocwb_l
+
+
+  - name: vocabularies
+    schema: "{{ env_var('OMOP_VOCAB_SCHEMA') }}"
+    tables:
+      - name: concept
+      - name: vocabulary
+      - name: domain
+      - name: concept_class
+      - name: concept_relationship
+      - name: relationship
+      - name: concept_synonym
+      - name: concept_ancestor
+      - name: source_to_concept_map
+      - name: drug_strength
+      
+  

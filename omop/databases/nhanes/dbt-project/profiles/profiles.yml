@@ -1,0 +1,23 @@
+
+# For more information on how to configure this file, please see:
+# https://docs.getdbt.com/dbt-cli/configure-your-profile
+
+nhanes_db:
+  target: nhanes_db
+  outputs:
+    nhanes_db:
+      type: "{{ env_var('ENGINE', 'redshift') }}"
+      threads: 1
+      sslmode: disable
+      host: "{{ env_var('HOST') }}"
+      port: "{{ env_var('PORT') | as_number }}"
+      user: "{{ env_var('USER') }}"
+      pass: "{{ env_var('PASS') }}"
+      dbname: "{{ env_var('DBNAME') }}"
+      schema: "{{ env_var('SCHEMA') }}"
+      omop_base_schema: "{{ env_var('OMOP_BASE_SCHEMA') }}"
+      omop_staging_schema: "{{ env_var('OMOP_STAGING_SCHEMA') }}"
+      omop_mapping_schema: "{{ env_var('OMOP_MAPPING_SCHEMA') }}"
+      omop_vocab_schema: "{{ env_var('OMOP_VOCAB_SCHEMA') }}"
+      omop_cdm_schema: "{{ env_var('OMOP_CDM_SCHEMA') }}"
+      omop_dq_results_schema: "{{ env_var('OMOP_DQ_RESULTS_SCHEMA') }}"
