@@ -1,0 +1,9 @@
+[submodule "omop/databases/camda"]
+	path = omop/databases/camda
+	url = https://github.com/violetacalles02-tech/camda-project.git
+[submodule "omop/databases/nhanes"]
+	path = omop/databases/nhanes
+	url = https://github.com/violetacalles02-tech/nhanes-project.git
+[submodule "omop/databases/diabetes-granada"]
+	path = omop/databases/diabetes-granada
+	url = https://github.com/violetacalles02-tech/diabetes-granada-project.git
