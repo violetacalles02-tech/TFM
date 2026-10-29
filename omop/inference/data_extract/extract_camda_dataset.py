@@ -32,13 +32,13 @@ except ImportError:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--host", default=os.getenv("PGHOST", "localhost"))
-    ap.add_argument("--port", default=os.getenv("PGPORT", "5432"))
-    ap.add_argument("--db", default=os.getenv("PGDATABASE", "omop_cdm"))
+    ap.add_argument("--port", default=os.getenv("PGPORT", "5435"))
+    ap.add_argument("--db", default=os.getenv("PGDATABASE", "camda"))
     ap.add_argument("--user", default=os.getenv("PGUSER", "postgres"))
-    ap.add_argument("--password", default=os.getenv("PGPASSWORD", ""))
+    ap.add_argument("--password", default=os.getenv("PGPASSWORD", "postgres"))
     ap.add_argument("--schema", default="cdm")
     ap.add_argument("--ref-year", type=int, default=2022)
-    ap.add_argument("--out", default="dataset_A_camda.csv")
+    ap.add_argument("--out", default="camda_infer.csv")
     ap.add_argument("--chunksize", type=int, default=500_000)
     args = ap.parse_args()
 
